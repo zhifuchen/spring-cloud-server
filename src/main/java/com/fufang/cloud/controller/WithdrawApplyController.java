@@ -1,9 +1,8 @@
 package com.fufang.cloud.controller;
 
-import com.fufang.cloud.core.Controller.BaseController;
-import com.fufang.cloud.core.response.FFApiResponse;
 import com.fufang.cloud.model.WithdrawApply;
 import com.fufang.cloud.service.IWithdrawApplyService;
+import com.fufang.cloud.util.core.response.FFApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
