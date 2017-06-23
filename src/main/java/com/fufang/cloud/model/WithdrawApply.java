@@ -293,4 +293,37 @@ public class WithdrawApply {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+    
+    @Override
+    public String toString() {
+        return "WithdrawApply{" +
+                "id='" + id + '\'' +
+                ", pharmacyId=" + pharmacyId +
+                ", pharmacyType=" + pharmacyType +
+                ", pharmacyName='" + pharmacyName + '\'' +
+                ", accountId='" + accountId + '\'' +
+                ", money=" + money +
+                ", createTime=" + createTime +
+                ", createUserId='" + createUserId + '\'' +
+                ", createUserName='" + createUserName + '\'' +
+                ", status=" + status +
+                ", checkUserId='" + checkUserId + '\'' +
+                ", checkUserName='" + checkUserName + '\'' +
+                ", checkTime=" + checkTime +
+                ", remark='" + remark + '\'' +
+                ", remitNumber='" + remitNumber + '\'' +
+                ", accountName='" + accountName + '\'' +
+                ", cardNo='" + cardNo + '\'' +
+                ", bankName='" + bankName + '\'' +
+                ", bankProvince='" + bankProvince + '\'' +
+                ", bankCity='" + bankCity + '\'' +
+                ", detailedBankName='" + detailedBankName + '\'' +
+                ", publicPrivate=" + publicPrivate +
+                ", linkman='" + linkman + '\'' +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", accountLogId='" + accountLogId + '\'' +
+                ", sort=" + sort +
+                ", bankSettleNo='" + bankSettleNo + '\'' +
+                '}';
+    }
 }

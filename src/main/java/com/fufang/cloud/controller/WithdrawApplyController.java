@@ -3,6 +3,8 @@ package com.fufang.cloud.controller;
 import com.fufang.cloud.model.WithdrawApply;
 import com.fufang.cloud.service.IWithdrawApplyService;
 import com.fufang.cloud.util.core.response.FFApiResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,13 +21,15 @@ import java.util.Map;
 @Controller
 @RequestMapping("/withdrawApply")
 public class WithdrawApplyController extends BaseController {
+    private static final Logger logger = LoggerFactory.getLogger(WithdrawApplyController.class);
     @Autowired
     private IWithdrawApplyService withdrawApplyService;
 
     @RequestMapping(value = "/addApply", method = RequestMethod.POST)
     @ResponseBody
     public FFApiResponse<Map<String,Object>> addApply(@RequestBody WithdrawApply param) {
-    	withdrawApplyService.addWithDrawApply(param);
+        logger.info("addApply参数:{}", param);
+        withdrawApplyService.addWithDrawApply(param);
         return success();
     }
 }
