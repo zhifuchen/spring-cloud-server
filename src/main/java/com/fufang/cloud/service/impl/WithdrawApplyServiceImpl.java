@@ -26,18 +26,17 @@ public class WithdrawApplyServiceImpl implements IWithdrawApplyService {
     @Override
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     public void addWithDrawApply(WithdrawApply withdrawApply) {
+        Date createTime = new Date();
         withdrawApply.setAccountId(withdrawApply.getAccountId());
         withdrawApply.setId(UUID.randomUUID().toString());
-        Date createTime = new Date();
         withdrawApply.setCreateTime(createTime);
         withdrawApply.setSort(1L);
-        withdrawApplyMapper.insert(withdrawApply);
-    
+        withdrawApplyMapper.insert(withdrawApply);//用的是acc的事务,所以不回滚
         Account account = new Account();
         account.setId(UUID.randomUUID().toString());
         account.setPharmacyId(2);
         account.setCreateDate(createTime);
-        accountMapper.insert(account);
-        throw new RuntimeException();
+        accountMapper.insert(account);//回滚
+        throw new RuntimeException("3");
     }
 }

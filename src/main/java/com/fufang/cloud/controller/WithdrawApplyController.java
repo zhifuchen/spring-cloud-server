@@ -3,7 +3,6 @@ package com.fufang.cloud.controller;
 import com.fufang.cloud.core.Controller.BaseController;
 import com.fufang.cloud.core.response.FFApiResponse;
 import com.fufang.cloud.model.WithdrawApply;
-import com.fufang.cloud.service.AccountService;
 import com.fufang.cloud.service.IWithdrawApplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,8 +22,6 @@ import java.util.Map;
 public class WithdrawApplyController extends BaseController {
     @Autowired
     private IWithdrawApplyService withdrawApplyService;
-    @Autowired
-    private AccountService accountService;
 
     @RequestMapping(value = "/addApply", method = RequestMethod.POST)
     @ResponseBody
