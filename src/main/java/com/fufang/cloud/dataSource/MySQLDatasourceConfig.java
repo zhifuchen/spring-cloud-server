@@ -19,7 +19,7 @@ public class MySQLDatasourceConfig {
     @Bean(destroyMethod="")
     public DataSource mysqlDatasource() throws IllegalArgumentException, NamingException {
         JndiObjectFactoryBean bean = new JndiObjectFactoryBean();
-        bean.setJndiName("java:comp/env/jdbc/dataSource_mysql");
+        bean.setJndiName("java:comp/env/jdbc/asset");
         bean.setProxyInterface(DataSource.class);
         bean.setLookupOnStartup(false);
         bean.afterPropertiesSet();

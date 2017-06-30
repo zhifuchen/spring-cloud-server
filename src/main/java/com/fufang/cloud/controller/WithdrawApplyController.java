@@ -7,12 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.Map;
 
 /**
  * Created by zhifu.chen on 2016/11/16.
@@ -27,7 +24,7 @@ public class WithdrawApplyController extends BaseController {
 
     @RequestMapping(value = "/addApply", method = RequestMethod.POST)
     @ResponseBody
-    public FFApiResponse<Map<String,Object>> addApply(@RequestBody WithdrawApply param) {
+    public FFApiResponse<String> addApply(WithdrawApply param) {
         logger.info("addApply参数:{}", param);
         withdrawApplyService.addWithDrawApply(param);
         return success();

@@ -32,7 +32,7 @@ public class MySQLAccDatasourceConfig {
             @Override
             protected void postProcessContext(Context context) {
                 ContextResource resource = new ContextResource();
-                resource.setName("jdbc/dataSource_mysql_acc");
+                resource.setName("jdbc/remoterecipel");
                 resource.setType(DataSource.class.getName());
                 resource.setProperty("driverClassName", "com.mysql.jdbc.Driver");
                 resource.setProperty("url", "jdbc:mysql://localhost:3306/tvd");
@@ -41,7 +41,7 @@ public class MySQLAccDatasourceConfig {
                 context.getNamingResources().addResource(resource);
     
                 ContextResource resource2 = new ContextResource();
-                resource2.setName("jdbc/dataSource_mysql");
+                resource2.setName("jdbc/asset");
                 resource2.setType(DataSource.class.getName());
                 resource2.setProperty("driverClassName", "com.mysql.jdbc.Driver");
                 resource2.setProperty("url", "jdbc:mysql://172.16.88.112:8066/ASSET?useUnicode=true&amp;characterEncoding=UTF-8");
@@ -55,7 +55,7 @@ public class MySQLAccDatasourceConfig {
     @Primary
     public DataSource mysqlAccDatasource() throws IllegalArgumentException, NamingException {
         JndiObjectFactoryBean bean = new JndiObjectFactoryBean();
-        bean.setJndiName("java:comp/env/jdbc/dataSource_mysql_acc");
+        bean.setJndiName("java:comp/env/jdbc/remoterecipel");
         bean.setProxyInterface(DataSource.class);
         bean.setLookupOnStartup(false);
         bean.afterPropertiesSet();
