@@ -27,6 +27,6 @@ public class WithdrawApplyController extends BaseController {
     public FFApiResponse<String> addApply(WithdrawApply param) {
         logger.info("addApply参数:{}", param);
         withdrawApplyService.addWithDrawApply(param);
-        return success();
+        return success("success");
     }
 }
